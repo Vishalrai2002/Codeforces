@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    ll n;
+    ll N;
+    while(t--){
+    cin>>n;
+    int counter=0;
+    std::vector<int> v;
+    N=n;
+    for(int i=2;i*i<=N;i++)
+    {
+    	if(n%i==0)
+    	{
+    		counter++;
+    		n=n/i;
+    		v.push_back(i);
+    	}
+    	if(counter==2){
+    		v.push_back(n);
+    		break;
+    	}
+    }
+    if(counter<2){
+    	cout<<"NO"<<endl;
+    }
+    else if(v[0]==v[2] or v[1]==v[2]){
+    	cout<<"NO"<<endl;
+    	    }
+    else{
+    	cout<<"YES"<<endl;
+    	cout<<v[0]<<" "<<v[1]<<" "<<v[2]<<endl;
+    }
+ 
+    }
+
+    return 0;
+}
